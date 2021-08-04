@@ -6,12 +6,12 @@ from SalesForecast.Common import available_models, KNN, LINRRG, DECISIONTREE, RA
 from SalesForecast.Models import get_model
 
 
-def get_dataset(sales, features, stores1):
+def get_dataset(sales, features, stores):
     """
     merges teh dataframe
     fills the dataframe nulls with 0
     """
-    dataset = sales.merge(stores1, how='left').merge(features, how='left')
+    dataset = sales.merge(stores, how='left').merge(features, how='left')
     from statistics import mean
     dataset['CPI'] = dataset['CPI'].fillna(mean(dataset['CPI']))
     dataset['Unemployment'] = dataset['Unemployment'].fillna(mean(dataset['Unemployment']))
