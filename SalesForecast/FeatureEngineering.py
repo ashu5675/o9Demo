@@ -6,7 +6,7 @@ from SalesForecast.Common import available_models, KNN, LINRRG, DECISIONTREE, RA
 from SalesForecast.Models import get_model
 
 
-def get_dataset(sales, features, stores):
+def get_dataset(sales, features1, stores1):
     """
     merges teh dataframe
     fills the dataframe nulls with 0
